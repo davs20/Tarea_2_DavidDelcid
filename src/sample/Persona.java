@@ -50,8 +50,8 @@ public class Persona {
         String persona="";
         for (int a = 0; a < lista.length; a++) {
 
-            Pattern valida = Pattern.compile(busqueda);
-            Matcher comprobacion = valida.matcher("+["+lista[a].nombre+" "+lista[a].apellido+"]");
+            Pattern valida = Pattern.compile(busqueda,Pattern.DOTALL);
+            Matcher comprobacion = valida.matcher(lista[a].nombre + " " + lista[a].apellido);
             if (comprobacion.find()) {
                 persona+=lista[a].nombre+" "+lista[a].apellido+" "+lista[a].edad+"\n";
 
